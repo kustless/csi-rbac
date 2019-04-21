@@ -1,0 +1,11 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: csi-controller:external-attacher
+subjects:
+  - kind: ServiceAccount
+    name: csi-controller
+roleRef:
+  kind: ClusterRole
+  name: external-attacher
+  apiGroup: rbac.authorization.k8s.io
